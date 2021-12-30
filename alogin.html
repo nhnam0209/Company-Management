@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styleslogin.css">
+</head>
+<body>
+	<header>
+        <div id="navli"  class="navigation">
+            <h1>My Company</h1>
+            <div class="navigation-right">
+            <a href="index.html">Home</a>
+            <a href="elogin.html">Employee Login</a>
+            <a href="alogin.html">Admin Login</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+	</header>
+	<div class="divider"></div>
+  <div class="container">
+    <div class="loginbox">
+      <img src="assets/admin.png" class="avatar">
+          <h1>Login Here</h1>
+          <form action="process/adminprocess.php" method="POST">
+              <p>Email</p>
+              <input type="text" name="mailid" placeholder="Enter Email Address" required="required">
+              <p>Password</p>
+              <input type="password" name="pwd" placeholder="Enter Password" required="required">
+              <input type="submit" name="login-submit" value="Login">
+          </form>
+          
+      </div>
+  </div>
+
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("navli");
+          if (x.className === "navigation") {
+            x.className += " responsive";
+          } else {
+            x.className = "navigation";
+          }
+        }
+  </script>		
+			
+			
+</body>
+</html>

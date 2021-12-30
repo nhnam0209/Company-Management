@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<title>My Company</title>
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class = "indexcontainer" style="margin-top: 175px">
+        <div class="namecontainer">
+            <h1>WELCOME TO MY COMPANY</h1>
+        </div>
+        <br>
+        <br>
+        <div class="button_container">
+            <button id="elogin" class="button_login">Employee Login</button>
+            <button id="alogin" class="button_login" >Admin Login</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("elogin").onclick = function(){
+            location.href = "/elogin.html"
+        }
+        document.getElementById("alogin").onclick = function(){
+            location.href = "/alogin.html"
+        }
+    </script>
+</body>
