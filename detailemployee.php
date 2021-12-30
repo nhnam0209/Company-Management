@@ -66,7 +66,6 @@
                                     <p>Email: <?php echo $email;?></p>
                                     <p>Date of Birth: <?php echo $DoB;?></p>
                                     <p>Gender: <?php echo $gender;?></p>
-                                    <p>Password: <?php echo $pwd;?></p>
                                     <p>Phone Number: <?php echo $phonenumber;?></p>
                                     <p>Address: <?php echo $addr;?></p>
                                     <p>Department: <?php echo $dept;?></p>

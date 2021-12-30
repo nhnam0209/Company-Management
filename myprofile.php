@@ -30,7 +30,7 @@
 
 <html>
 <head>
-	<title>Employee</title>
+	<title>My Profile</title>
 	<link rel="stylesheet" type="text/css" href="styleemployee.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

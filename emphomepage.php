@@ -35,11 +35,14 @@
               </div>
           </div>
     </header>
-    
-	<div class="divider"></div>
-	<div id="divimg">
-		<h2 style="font-family: 'Montserrat', sans-serif; font-size: 25px; text-align: center;">Welcome back <?php echo $firstname;?> <?php echo $lastname;?> </h2>
-	</div>
+    <div class="container"> 
+      <div class="text_container">
+        <h1>Welcome Back  <?php echo $firstname;?> <?php echo $lastname;?></h1>
+      </div>
+      <div class="divider"></div>
+      <div class="img_container">
+        <img src="assets/employeehomepage.png" alt="">
+      </div>
 
     <script>
         function myFunction() {

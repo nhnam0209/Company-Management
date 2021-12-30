@@ -10,7 +10,7 @@
 	$result = mysqli_query($conn, $sql) ;
     echo mysqli_error($conn);
 
-	if($result){
+	if(mysqli_num_rows($result) == 1){
         while($res = mysqli_fetch_assoc($result))
         {
             $tid = $res['tid'];
@@ -86,6 +86,9 @@
                                      <div class="row">
                                          <?php
                                             echo "<a href=\"approvetask.php?id=$eid&tid=$tid\">Approve</a><a href=\"rejecttask.php?id=$eid&tid=$tid\">Reject</a>"; 
+                                            if($stt == 'New'){
+                                                echo "<a href = \"canceltask.php?id=$eid&tid=$tid\">Cancel</a>";
+                                            }
                                          ?>
                                      </div>
                                 </div>
