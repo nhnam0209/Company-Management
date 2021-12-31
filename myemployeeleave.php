@@ -12,6 +12,7 @@
 <head>
 	<title>Employee</title>
 	<link rel="stylesheet" type="text/css" href="styleemployee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	
@@ -69,53 +70,62 @@
             </div>
         </div>
     </div>
+    
+    <div style = "overflow-x:auto;">
+        <table class = "style-table">
+            <thead>
+                <tr>
+                    <th align = "center">Emp. ID</th>
+                    <th align = "center">Name</th>
+                    <th align = "center">Start Date</th>
+                    <th align = "center">End Date</th>
+                    <th align = "center">Total Days</th>
+                    <th align = "center">Reason</th>
+                    <th align = "center">Status</th>
+                </tr>
+            </thead>
 
-	<table>
-			<tr>
-				<th align = "center">Emp. ID</th>
-				<th align = "center">Name</th>
-				<th align = "center">Start Date</th>
-				<th align = "center">End Date</th>
-				<th align = "center">Total Days</th>
-				<th align = "center">Reason</th>
-				<th align = "center">Status</th>
-			</tr>
+            <tbody>
+            <?php
+                $sql = "Select employee.id, employee.firstname, employee.lastname, employeeleave.start, employeeleave.end, employeeleave.reason, employeeleave.stt From employee, employeeleave Where employee.id = $id and employeeleave.id = $id order by employeeleave.token";
+                $result = mysqli_query($conn, $sql);
+                while ($employee = mysqli_fetch_assoc($result)) {
+                    $date1 = new DateTime($employee['start']);
+                    $date2 = new DateTime($employee['end']);
+                    $interval = $date1->diff($date2);
+                    $interval = $date1->diff($date2);
+
+                    echo "<tr>";
+                    echo "<td>".$employee['id']."</td>";
+                    echo "<td>".$employee['firstname']." ".$employee['lastname']."</td>";
+                    
+                    echo "<td>".$employee['start']."</td>";
+                    echo "<td>".$employee['end']."</td>";
+                    echo "<td>".$interval->days."</td>";
+                    echo "<td>".$employee['reason']."</td>";
+                    echo "<td>".$employee['stt']."</td>";
+                    
+                }
 
 
-			<?php
+                ?>
+            </tbody>
 
-
-				$sql = "Select employee.id, employee.firstname, employee.lastname, employeeleave.start, employeeleave.end, employeeleave.reason, employeeleave.stt From employee, employeeleave Where employee.id = $id and employeeleave.id = $id order by employeeleave.token";
-				$result = mysqli_query($conn, $sql);
-				while ($employee = mysqli_fetch_assoc($result)) {
-					$date1 = new DateTime($employee['start']);
-					$date2 = new DateTime($employee['end']);
-					$interval = $date1->diff($date2);
-					$interval = $date1->diff($date2);
-
-					echo "<tr>";
-					echo "<td>".$employee['id']."</td>";
-					echo "<td>".$employee['firstname']." ".$employee['lastname']."</td>";
-					
-					echo "<td>".$employee['start']."</td>";
-					echo "<td>".$employee['end']."</td>";
-					echo "<td>".$interval->days."</td>";
-					echo "<td>".$employee['reason']."</td>";
-					echo "<td>".$employee['stt']."</td>";
-					
-				}
-
-
-			?>
+			
 
 
 		</table>
-
-
-
-
-
-
-
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("navli");
+          if (x.className === "navigation") {
+            x.className += " responsive";
+          } else {
+            x.className = "navigation";
+          }
+        }
+    </script>	
+	
 </body>
 </html>

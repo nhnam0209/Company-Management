@@ -4,7 +4,7 @@
 
 	$tid = (isset($_GET['tid']) ? $_GET['tid'] : '');
 
-	$sql = "SELECT id, task.tid, task.eid, task.tname, task.deadline, task.subdate, task.stt, task.descript, employee.firstname, employee.lastname FROM `task`,`employee` WHERE task.tid = tid AND task.eid = id AND employee.id = task.eid";
+	$sql = "SELECT id, task.tid, task.eid, task.tname, task.deadline, task.subdate, task.stt, task.descript,task.rating, task.upfile, employee.firstname, employee.lastname FROM `task`,`employee` WHERE task.tid = tid AND task.eid = id AND employee.id = task.eid";
 
 
 	$result = mysqli_query($conn, $sql) ;
@@ -22,6 +22,9 @@
             $subdate = $res['subdate'];
             $stt = $res['stt'];
             $descript = $res['descript'];
+            $rating = $res['rating'];
+            $upfile = $res['upfile'];
+
         }
     }
 
@@ -32,6 +35,7 @@
 	<title>Employee</title>
 	<link rel="stylesheet" type="text/css" href="styleemployee.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
@@ -71,6 +75,8 @@
                                      <p>Submission Date: <?php echo $subdate;?></p>
                                      <p>Description: <?php echo $descript;?></p>
                                      <p>Status: <?php echo $stt;?></p>
+                                     <p>Rating: <?php echo $rating;?></p>
+                                     <p>Files: <a href="download.php?path="><?php $upfile?>Download file submit</a></p>
                                 </div>
                             </div>
 

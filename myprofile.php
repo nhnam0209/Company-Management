@@ -32,6 +32,7 @@
 <head>
 	<title>My Profile</title>
 	<link rel="stylesheet" type="text/css" href="styleemployee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -58,27 +59,25 @@
             <div class="card card-1">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Employee Infomation</h2>
+                    <h2 class="title_header">Employee Infomation</h2>
                     <form id = "registration" method="POST" action="editmyprofile.php?id=<?php echo $id?>">
 
-                        <div class="row row-space"> 
-                            <div class="col-2">
-                                <div class="input-group">
-                                     <img src="process/<?php echo $pic;?>" >
-                                     <p>Employee ID: <?php echo $id;?></p>
-                                     <p>First Name: <?php echo $firstname;?></p>
-                                     <p>Last Name: <?php echo $lastname;?></p>
-                                     <p>Email: <?php echo $email;?></p>
-                                     <p>Date of Birth: <?php echo $DoB;?></p>
-                                     <p>Gender: <?php echo $gender;?></p>
-                                     <p>Phone Number: <?php echo $phonenumber;?></p>
-                                     <p>Address: <?php echo $addr;?></p>
-                                     <p>Department: <?php echo $dept;?></p>
-                                     <p>Degree: <?php echo $degree;?></p>
-                                     <input type="hidden" name="id" id="textField" value="<?php echo $id;?>" required="required"><br><br>
-                                     <div class="p-t-20">
-                                        <button class="btn btn--radius btn--green"  name="send" >Update Info</button>
-                                    </div>
+                        <div class="container_profile"> 
+                            <div class="card">
+                                    <img src="process/<?php echo $pic;?>" >
+                                    <p>Employee ID: <?php echo $id;?></p>
+                                    <p>First Name: <?php echo $firstname;?></p>
+                                    <p>Last Name: <?php echo $lastname;?></p>
+                                    <p>Email: <?php echo $email;?></p>
+                                    <p>Date of Birth: <?php echo $DoB;?></p>
+                                    <p>Gender: <?php echo $gender;?></p>
+                                    <p>Phone Number: <?php echo $phonenumber;?></p>
+                                    <p>Address: <?php echo $addr;?></p>
+                                    <p>Department: <?php echo $dept;?></p>
+                                    <p>Degree: <?php echo $degree;?></p>
+                                    <p>
+                                        <button name="send" >Update Info</button>
+                                    </p>
                                 </div>
                             </div>
                         </div> 

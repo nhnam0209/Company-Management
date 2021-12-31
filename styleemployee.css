@@ -139,3 +139,176 @@ body {
     flex: 100%;
   }
 }
+
+.title_header{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+
+}
+
+
+
+.card button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.card button:hover, a:hover {
+  opacity: 0.7;
+}
+
+input[type=text], input[type=file], input[type=email],input[type=number], input[type=date], select, textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin: 5px;
+  float: none;
+}
+
+a{
+  color: #faefb1;
+}
+
+input[type=submit]{
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.form_text{
+  color: black;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.container_form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+
+}
+.container_form_edit {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flexbox;
+
+}
+
+.style-table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  border-spacing: 0;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  justify-content: center;
+  align-items: center;
+  background-color: royalblue;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.style-table thead tr {
+  background-color: #caf74e;
+  border-radius: 10px;
+  color: #ffffff;
+  text-align: left;
+  color: rgb(59, 51, 51);
+  
+}
+
+.style-table th, 
+.style-table td {
+    padding: 15px 17px;
+}
+
+.style-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+
+.style-table tbody tr:nth-of-type(even) {
+  background-color: #fc3d66;
+}
+
+.style-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.style-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}

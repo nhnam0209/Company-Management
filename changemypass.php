@@ -8,38 +8,41 @@ $sql = "SELECT * FROM `employee` WHERE 1";
 
 //echo "$sql";
 $result = mysqli_query($conn, $sql);
+
 if(isset($_POST['update']))
 {
-
   $id = $_REQUEST['id'];
-  $old = $_POST['oldpass'];
-  $new = $_POST['newpass'];
+  $old = $_POST['old'];
+  $new = $_POST['new'];
 
   $sqli = "SELECT pwd from `employee`  WHERE id = $id";
-  $result = mysqli_query($conn, $sqli);
+
+  $resulta = mysqli_query($conn, $sqli);
   $empwd = "";
 
   $hash = password_hash($new,PASSWORD_BCRYPT);
-  $employee = mysqli_fetch_array($result);
+
+  $employee = mysqli_fetch_array($resulta);
   $empwd = ($employee['pwd']);
 
-  
+
   if(password_verify($old,$empwd)){
-    $sql = "UPDATE employee SET pwd = '$hash' WHERE id = $id";
-    mysqli_query($conn, $sql);
+    $sqla = "UPDATE employee SET pwd = '$hash' WHERE id = $id";
+    mysqli_query($conn, $sqla);
       echo ("<SCRIPT LANGUAGE='JavaScript'>
           window.alert('Password Updated')
         window.location.href='myprofile.php?id=$id';</SCRIPT>"); 
   
-  }
+    }
     else{
           echo ("<SCRIPT LANGUAGE='JavaScript'>
     window.alert('Failed to Update Password')
     window.location.href='javascript:history.go(-1)';
     </SCRIPT>");
-        }
+    }
 }
 ?>
+
 
 <!-- <?php
   $id = (isset($_GET['id']) ? $_GET['id'] : '');
@@ -92,14 +95,14 @@ if(isset($_POST['update']))
                           <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                  <p>Old Password</p>
-                                     <input class="input--style-1" type="Password" name = "oldpass" required >
+                                  <p>Old Password <?php echo $id?></p>
+                                     <input class="input--style-1" type="Password" name = "old" required >
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                   <p>New Password</p>
-                                    <input class="input--style-1" type="Password" name="newpass" required>
+                                    <input class="input--style-1" type="Password" name="new" required>
                                 </div>
                             </div>
                         </div>

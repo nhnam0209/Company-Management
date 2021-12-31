@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2021 at 11:36 AM
+-- Generation Time: Dec 31, 2021 at 05:45 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -90,7 +90,7 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`id`, `firstname`, `lastname`, `email`, `pwd`, `DoB`, `gender`, `phonenumber`, `addr`, `dept`, `degree`, `pic`, `stt`) VALUES
 (100002, 'Tran', 'Tuan Minh', 'ttminh@mycompany.com', '$2y$10$K5d8ZaBGb3k/135w4/eDhOaOpCbMfMxOC221zaqq76n2t1WRZW8oi', '2005-01-13', 'Male', '09033654489', '11 Nguyen Hue', 'IT', 'Bachelor', 'images/download (1).jpeg', -1),
-(100004, 'Minh Nhan', 'Nguyen', 'nmnhan@mycompany.com', '$2y$10$9HiGt7UyExr3ifm/hgFS3.oRFH1U9927u/ElDhP72I9qjM7qzKlG.', '1993-06-15', 'Male', '055315656', '23 Nguyen Hue', 'Marketing', 'Bachelor', 'images/no.jpg', 0),
+(100004, 'Minh Nhan', 'Nguyen', 'nmnhan@mycompany.com', '$2y$10$ureHW1bosi9/JhRmD8DRZOadTjRWjqUfKQAaCjIBWXGadZClyb0ci', '1993-06-15', 'Male', '055315656', '23 Nguyen Hue', 'Marketing', 'Bachelor', 'images/no.jpg', -1),
 (100005, 'Nguyen', 'Minh Tam', 'nmtam@mycompany.com', '$2y$10$05S2Wgcb/FXjsNOXyzIeLujGUutoFAGOQsAaMutP/9wu0ia5fEXqG', '1992-04-30', 'Male', '0399552331', '25/1 Tran Hung Dao', 'IT', 'Bachelor', 'images/no.jpg', -1),
 (100006, 'Nguyễn', 'Thị Diễm My', 'ntdmy@mycompany.com', '$2y$10$2yhCpJp2U5wm98.KivdyjOrDjw79gRZf9WvLr6O4LUjT4AqNge7q.', '1999-06-08', 'Female', '09112364586', '55 Võ Trường Toản', 'IT', 'Bachelor', 'images/no.jpg', -1),
 (100007, 'Hoàng', 'Anh Tuấn', 'hatuan@mycompany.com', '$2y$10$c.FagIuq1YnJLiT5mSV05.WHEEBJLjK1CTsToljdcR..zh3agr.xy', '1995-05-01', 'Male', '0666549866', '32 Võ Thị Sáu', 'IT', 'Bachelor', 'images/no.jpg', -1),
@@ -142,7 +142,8 @@ CREATE TABLE `task` (
 
 INSERT INTO `task` (`tid`, `eid`, `tname`, `deadline`, `subdate`, `stt`, `descript`, `rating`, `upfile`) VALUES
 (6, 100002, 'Data Structure ', '2021-12-03', '0000-00-00', 'Completed', 'ABC', 'Good', ''),
-(7, 100004, 'Data Structure4', '2022-01-05', '0000-00-00', 'New', '', '', '');
+(7, 100004, 'Data Structure4', '2022-01-05', '2021-12-31', 'Waiting', '', '', 'upload/test.txt'),
+(8, 100004, 'Web', '2022-01-01', '0000-00-00', 'Cancel', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -199,7 +200,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
