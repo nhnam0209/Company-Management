@@ -23,6 +23,7 @@
 	<title>Employee</title>
 	<link rel="stylesheet" type="text/css" href="styleemployee.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
@@ -46,54 +47,87 @@
     <!-- <form id = "registration" action="edit.php" method="POST"> -->
   <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
         <div class="wrapper wrapper--w680">
-            <div class="card card-1">
+            <div class="card card-2">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Update Employee Info</h2>
+                    <h2 class="title_header">Update Employee Info</h2>
                     <form id = "registration" action="process/editprofile.php?id=<?php echo $id?>" method="POST" enctype="multipart/form-data">
 
-                        <div class="input-group">
+                        <div class="row">
+                          <div class="col-25">
                             <p>Avatar</p>
-                            <input class="input--style-1" type="file" placeholder="Avatar" name="file">
+                          </div>
+                          <div class="col-75">
+                              <input class="input--style-1" type="file" placeholder="Avatar" name="file">
+                          </div>
+                            
                         </div>
-
-                    
-                        <div class="input-group">
-                          <p>First Name</p>
-                            <input class="input--style-1" type="text"  name="firstname" value="<?php echo $firstname;?>">
+                        <div class="row">
+                          <div class="col-25">
+                            <p>First Name</p>
+                          </div>
+                          <div class="col-75">
+                          <input class="input--style-1" type="text"  name="firstname" value="<?php echo $firstname;?>">
+                          </div>
+                            
                         </div>
-                       
-                        
-                        <div class="input-group">
+                        <div class="row">
+                          <div class="col-25">
                           <p>Last Name</p>
+                          </div>
+                          <div class="col-75">
                             <input class="input--style-1" type="text"  name="lastname" value="<?php echo $lastname;?>">
-                        </div>
-                       
-                        
-                        <div class="input-group">
-                          <p>Phone Number</p>
-                            <input class="input--style-1" type="number" name="phonenumber" value="<?php echo $phonenumber;?>">
+                          </div>
+                          
                         </div>
 
-                        <div class="input-group">
+                        <div class="row">
+                          <div class="col-25">
+                            <p>Phone Number</p>
+                          </div>
+                          <div class="col-75">
+                          <input class="input--style-1" type="number" name="phonenumber" value="<?php echo $phonenumber;?>">
+                          </div>
+                            
+                        </div>
+
+                        <div class="row">
+                          <div class="col-25">
                           <p>Date of Birth</p>
-                            <input class="input--style-1" type="date" name="DoB" value="<?php echo $DoB;?>">
+                          </div>
+                          <div class="col-75">
+                          <input class="input--style-1" type="date" name="DoB" value="<?php echo $DoB;?>">
+                          </div>
+                            
                         </div>
 
-                         <div class="input-group">
+                        <div class="row">
+                          <div class="col-25">
                           <p>Address</p>
-                            <input class="input--style-1" type="text"  name="addr" value="<?php echo $addr;?>">
+                          </div>
+                          <div class="col-75">
+                          <input class="input--style-1" type="text"  name="addr" value="<?php echo $addr;?>">
+                          </div>
+                            
                         </div>
 
-                       
                         <input type="hidden" name="id" id="textField" value="<?php echo $id;?>" required="required"><br><br>
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit" name="update">Submit</button>
+                            
+
+                        </div>
+                        <br>
+                        <div class="p-t-20">
+                            <?php
+                                echo "<a href=\"changemypass.php?id=$id\">Change Password</a>;";
+                              ?>
+
                         </div>
                         
                     </form>
-                    <br>
-                    <button class="btn btn--radius btn--green" onclick="window.location.href = 'changemypass.php?id=<?php echo $id?>';">Change Password</button>
+                    
+
                 </div>
             </div>
         </div>

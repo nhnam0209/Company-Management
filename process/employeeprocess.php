@@ -32,9 +32,11 @@ if(mysqli_num_rows($result) == 1){
     $empwd = ($cpwd['pwd']);
     $empstt = ($cstt['stt']);
 
+    $newstt = '1';
+
     
     if(password_verify($pwd, $empwd) AND $empstt == '-1'){
-        $sqla = "UPDATE employee SET stt = 0 WHERE email = $email";
+        $sqla = "UPDATE `employee` SET stt = $newstt WHERE id = $empid";
         mysqli_query($conn, $sqla);
         header("Location: ..//changepassword1st.php?id=$empid");
     }

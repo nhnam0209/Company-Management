@@ -6,7 +6,7 @@ $tname = $_POST['tname'];
 $eid = $_POST['eid'];
 $subdate = $_POST['deadline'];
 
-$sql = "INSERT INTO `task`(`eid`, `tname`, `deadline` , `stt`) VALUES ('$eid' , '$tname' , '$subdate' , 'New')";
+$sql = "INSERT INTO `task`(`eid`, `tname`, `deadline` ,`descript`, `stt`) VALUES ('$eid' , '$tname' , '$subdate' , `$descript`, 'New')";
 
 $result = mysqli_query($conn, $sql);
 

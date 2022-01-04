@@ -4,7 +4,7 @@
 
 	$tid = (isset($_GET['tid']) ? $_GET['tid'] : '');
 
-	$sql = "SELECT id, task.tid, task.eid, task.tname, task.deadline, task.subdate, task.stt, task.descript, task.rating,employee.firstname, employee.lastname FROM `task`,`employee` WHERE task.tid = $tid AND task.eid = $id AND employee.id = task.eid";
+	$sql = "SELECT id, task.tid, task.eid, task.tname, task.deadline, task.subdate, task.stt, task.descript, task.rating,task.upfile,employee.firstname, employee.lastname FROM `task`,`employee` WHERE task.tid = $tid AND task.eid = $id AND employee.id = task.eid";
 
 
 	$result = mysqli_query($conn, $sql) ;
@@ -24,6 +24,8 @@
             $stt = $res['stt'];
             $descript = $res['descript'];
             $rating = $res['rating'];
+            $upfile = $res['upfile'];
+
 
         }
     }
@@ -42,6 +44,7 @@
 
     <!-- Main CSS-->
 	<link rel="stylesheet" type="text/css" href="styleadmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -82,7 +85,8 @@
                                      <p>Submission Date: <?php echo $subdate;?></p>
                                      <p>Description: <?php echo $descript;?></p>
                                      <p>Status: <?php echo $stt;?></p>
-                                     <p>Rating  <?php echo $rating;?></p>
+                                     <p>Rating: <?php echo $rating;?></p>
+                                     <p>Submission File: <?php echo $upfile;?></p>
                                      <div class="row">
                                          <?php
                                             echo "<a href=\"approvetask.php?id=$eid&tid=$tid\">Approve</a><a href=\"rejecttask.php?id=$eid&tid=$tid\">Reject</a>"; 

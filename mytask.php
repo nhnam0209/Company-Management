@@ -1,7 +1,7 @@
 <?php 
 	$id = (isset($_GET['id']) ? $_GET['id'] : '');
 	require_once ('process/dbh.php');
-	$sql = "SELECT * FROM `task` where eid = '$id'";
+	$sql = "SELECT * FROM `task` where eid = '$id' AND stt != 'Cancel'";
 	$result = mysqli_query($conn, $sql);
 	
 ?>
@@ -13,6 +13,7 @@
 	<title>Employee</title>
 	<link rel="stylesheet" type="text/css" href="styleemployee.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	
@@ -31,12 +32,14 @@
               </div>
           </div>
     </header>
-	<div class="divider"></div>
-	<div id="divimg">
-        <h1>My Task</h1>
+	<div class="title_header">
+    	<h1>Task Status</h1>
+  	</div>
 
-		<table>
-			<tr>
+	  <div style="overflow-x:auto;">
+		<table class = "style-table">
+			<thead>
+				<tr>
 
 				<th align = "center">Task ID</th>
 				<th align = "center">Task Name</th>
@@ -44,26 +47,37 @@
 				<th align = "center">Submission Date</th>
 				<th align = "center">Status</th>
 				<th align = "center">Option</th>
-			</tr>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+						while ($task = mysqli_fetch_assoc($result)) {
 
-			<?php
-				while ($task = mysqli_fetch_assoc($result)) {
+							echo "<tr>";
+							echo "<td>".$task['tid']."</td>";
+							echo "<td>".$task['tname']."</td>";
+							echo "<td>".$task['deadline']."</td>";
+							echo "<td>".$task['subdate']."</td>";
+							echo "<td>".$task['stt']."</td>";
+							
+							echo "<td><a href=\"detailtaskemployee.php?tid=$task[tid]&id=$task[eid]\">Detail</a> | <a href=\"start.php?tid=$task[tid]&id=$task[eid]\">Start</a> | <a href=\"submit.php?tid=$task[tid]&id=$task[eid]\">Submit</a>";
 
-					echo "<tr>";
-					echo "<td>".$task['tid']."</td>";
-					echo "<td>".$task['tname']."</td>";
-					echo "<td>".$task['deadline']."</td>";
-					echo "<td>".$task['subdate']."</td>";
-					echo "<td>".$task['stt']."</td>";
-					
-					echo "<td><a href=\"detailtaskemployee.php?tid=$task[tid]&id=$task[eid]\">Detail</a> | <a href=\"start.php?tid=$task[tid]&id=$task[eid]\">Start</a> | <a href=\"submit.php?tid=$task[tid]&id=$task[eid]\">Submit</a>";
+						}
+					?>
+			</tbody>
+			</table>
+	  </div>
+	  <script>
+        function myFunction() {
+          var x = document.getElementById("navli");
+          if (x.className === "navigation") {
+            x.className += " responsive";
+          } else {
+            x.className = "navigation";
+          }
+        }
+  </script>	
 
-				}
-
-
-			?>
-
-		</table>
 
 		</body>
 </html>

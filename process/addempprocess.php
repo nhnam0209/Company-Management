@@ -30,7 +30,7 @@ if(in_array($filecheck, $fileextstored)){
     $destinationfile = 'images/'.$filename;
     move_uploaded_file($filetemp, $destinationfile);
 
-    $sql = "INSERT INTO `employee`(`id`, `firstname`, `lastname`, `email`, `pwd`, `DoB`, `gender`, `phonenumber`,  `addr`, `dept`, `degree`, `pic`) VALUES ('$id','$firstname','$lastname','$email','$pwd','$DoB','$gender','$phonenumber','$addr','$dept','$degree','$destinationfile')";
+    $sql = "INSERT INTO `employee`(`id`, `firstname`, `lastname`, `email`, `pwd`, `DoB`, `gender`, `phonenumber`,  `addr`, `dept`, `degree`, `pic`, `stt`) VALUES ('$id','$firstname','$lastname','$email','$pwd','$DoB','$gender','$phonenumber','$addr','$dept','$degree','$destinationfile', '-1')";
 
 $result = mysqli_query($conn, $sql);
 
@@ -54,7 +54,7 @@ else{
 }
 
 else{
-    $sql = "INSERT INTO `employee`(`id`, `firstname`, `lastname`, `email`, `pwd`, `DoB`, `gender`, `phonenumber`, `addr`, `dept`, `degree`, `pic`) VALUES ('','$firstname','$lastname','$email','$pwd','$DoB','$gender','$phonenumber','$addr','$dept','$degree','images/no.jpg')";
+    $sql = "INSERT INTO `employee`(`id`, `firstname`, `lastname`, `email`, `pwd`, `DoB`, `gender`, `phonenumber`, `addr`, `dept`, `degree`, `pic`, `stt`) VALUES ('','$firstname','$lastname','$email','$pwd','$DoB','$gender','$phonenumber','$addr','$dept','$degree','images/no.jpg','-1')";
     $result = mysqli_query($conn, $sql);
 
     $last_id = $conn->insert_id;
